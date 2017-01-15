@@ -1,7 +1,13 @@
 * {
-    margin: 0;
+    margin: 10;
     padding: 0;
     box-sizing: border-box; /*This allows easy calculations for width and height*/
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 body {
@@ -34,13 +40,49 @@ p {
 
 #author-text {
     font-size: 22px;
+    float: left;  /* Used to float the author's name next to him*/
+    margin-top: 15px;
+    margin-left: 30px;
 }
 .container {
     width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
+/*    marging: top, right, bottom, left;*/
+    margin: 20px auto 0 auto;
 }
 
 .blog-post {
-    background-color: #0000FF;
+/*    background-color: #0000FF;*/ /* Used to see where the box elements are*/
+    width: 75%;
+    float: left;
+    padding-right: 30px;
 }
+
+.other-posts {
+/*    background-color: #00FF00;*/ /* Used to see where the box elements are*/
+    width: 25%;
+    float: left;
+}
+
+.author-box {
+    /* background-color: #ffff00;  Used to see where the box elements are */
+    padding: 20px;
+    border-top: 1px solid #a7a7a7;
+    width: 75%;
+}
+
+.author-box img {  /* Only targets img elements with the author-box class */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    float: left;  /* Used to float the author's name next to him*/
+}
+
+.other {
+    margin-bottom: 20px;
+}
+
+.blog-post img {
+    height: 150px;
+    width: auto; /* Used to keep the aspect ratio of the original - as we just defined a height */
+}
+
