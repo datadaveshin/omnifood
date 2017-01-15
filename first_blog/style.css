@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*This allows easy calculations for width and height*/
+}
+
 body {
     font-family: Helvetica Neue, Arial;
 }
@@ -8,10 +14,12 @@ h1, h2 {
 
 h1 {
     font-size: 40px;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 p {
@@ -21,8 +29,18 @@ p {
 
 .main-text {
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 #author-text {
     font-size: 22px;
+}
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-post {
+    background-color: #0000FF;
 }
