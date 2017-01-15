@@ -67,7 +67,6 @@ p {
     /* background-color: #ffff00;  Used to see where the box elements are */
     padding: 20px;
     border-top: 1px solid #a7a7a7;
-    width: 75%;
 }
 
 .author-box img {  /* Only targets img elements with the author-box class */
