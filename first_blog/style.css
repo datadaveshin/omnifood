@@ -55,6 +55,7 @@ p {
     width: 75%;
     float: left;
     padding-right: 30px;
+    position: relative; /* Needed to position, the .date class within it */
 }
 
 .other-posts {
@@ -85,3 +86,8 @@ p {
     width: auto; /* Used to keep the aspect ratio of the original - as we just defined a height */
 }
 
+.date {
+    position: absolute; /* Note, it's parent the .blog-post class must be set to relative */
+    top: 10px;     /* Means no distance between it and the parent container*/ 
+    right: 30px;   /* Means no distance between it and the parent container*/ 
+}
