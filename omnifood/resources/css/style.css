@@ -1,19 +1,127 @@
+/*First step even though we do use normalize.css*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*Set up some defaults for the project*/
 html {
     background-color: #fff;
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
+    /* Make text legible*/
     text-rendering: optimizeLegibility;
 }
 
+/*Set up the .row property we are using from grid.css, our responsive css file*/
 .row {
+    /*Set a max width for our flex system with an absolute value (px), the rest will be relative*/
     max-width: 1140px;
+    /*Center things within this div class:*/
     margin: 0 auto 0 auto;
 }
+
+header {
+    /* Specifys the image to be used as our background*/
+    /* Note it won't show because our header height is basically zero */
+    /* The line afterward (height) will take care of it */
+    /* Also because our text is hard to see, we will darken the image */
+    /* To do this, we use the linear-gradient key, which usually takes two colors */
+    /* But we will use black for each color with a 70% transparency using RGBA notation */
+    /* Play with the numbers to change i */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/hero.jpg);
+    /* Need this to see the background-image */
+    /* Note how we now use a relative height - this will match the viewport */
+    /* Toggle this and you will see the image disappear */
+    height: 100vh;
+    /* Image is too zoomed out, so now tell browswer we want to see the whole image */
+    /* Toggle this to see it zoom back out */
+    background-size: cover;
+    /* And now we center the image */
+    background-position: center;
+}
+
+h1 {
+    /* This eliminates the white space (margin) above the header */
+    /* as normalize.css adds in margins on h elements like <h1> */
+    /* I have no idea why the margin:0; */
+    /* in the * section did not work unless it's normalize */
+    margin-top: 0;
+    /* Setting margin-bottom to give some space after the buttons */
+    margin-bottom: 20px;
+    /* Lighten the text color because it has the black overlay on it */
+    color: #fff;
+    /* Note here, we use relative sizing for the font size */
+    /* This way, it will change if we make the global change above in the html section */
+    /* where the font size is currently set to 20 px */
+    /* Here, we want to make it bigger */
+    font-size: 240%;
+    /* Remember to decrease the weight when the text is large. */
+    /* Toggle to see the difference */
+    font-weight: 300;
+    /* Here is some additional styling - Upper case it */
+    text-transform: uppercase;
+    /* and add some space between letters and words */
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+/* Note here we won't use the responsive grid */
+/* because we want this box to be an 'absolute'-ly positioned box */
+/* because that is the ONLY WAY to vertically and horizontally center divs */
+.hero-text-box {
+    position: absolute;
+    /* Need to do this so it's width is the same as a row" */
+    width: 1140px;
+    /* Then do the relative positioning */
+    /* note though, this moves the whole element to the center of the screen */
+    /* but that starts from the upper left hand corner - thus after ward, need an offset */
+    /* Toggle to see it move, but also toggle the transform below first */
+    top: 50%;
+    left: 50%;
+    /* This will provide the offset and translate the "point" that is centered to be the middle */
+    /* so we will transform it using some translation */
+    /* Toggle and you will see the div is centered (not the text within the div though) */
+    transform: translate(-50%, -50%);
+}
+
+/* This element will be `in-line block` which is a hybrid between block and in-line */
+/* It doesn't force a line break like a block element */
+/* And you can add padding and margin which you can't with an in-line element */
+.btn {
+    /* This sets the .btn to inline-block */
+    /* Note, there are tons of other options for display */
+    display: inline-block;
+    /* Now we can give it some padding and margins */
+    padding: 10px 30px;
+    font-weight: 300;
+    /* Get rid of underline on the buttons */
+    text-decoration: none;
+    /* Add roundness */
+    border-radius: 200px;
+}
+
+/* This button is the "full" button, it will have a filled color */
+/* The one below will have be "empty" and is called a "Ghost" button */
+/* For the ghost button, */
+/* we will match the border color with the background of the 'full' button */
+.btn-full {
+    /* Went to flatuicolors.com to chose the carrot orange color */
+    background-color: #e67e22; 
+    /* We add this because without it, */
+    /* there is no border and this button will be smaller than the one below */
+    border: 1px solid #e67e22;
+    /* Change text color */
+    color: #fff;
+}
+
+.btn-ghost {
+    /* Here we are styling based on colors from the button above */
+    border: 1px solid #e67e22;
+    /* Change text color to match the orange */
+    color: #e67e22;
+}
+
