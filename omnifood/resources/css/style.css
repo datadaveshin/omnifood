@@ -91,7 +91,16 @@ h1 {
 /* This element will be `in-line block` which is a hybrid between block and in-line */
 /* It doesn't force a line break like a block element */
 /* And you can add padding and margin which you can't with an in-line element */
-.btn {
+/* Note the pseudoclass 'link' - when we started, we just used '.btn' here */
+/* to control the .btn-full and .btn-ghost */
+/* but with link added to it, it extends to the state where the button*/
+/* is just a link that has NOT been clicked */
+/* adding 'visited' means after it is clicked */
+/* it will also have these properties and not change */
+
+/*.btn */
+.btn:link,
+.btn:clicked {
     /* This sets the .btn to inline-block */
     /* Note, there are tons of other options for display */
     display: inline-block;
@@ -104,11 +113,23 @@ h1 {
     border-radius: 200px;
 }
 
+
+/* This was not here before, defining .btn-full and .btn-ghost */
+/* But this will also change the states when the mouse hovers over the button */
+/* And also when it is activated */
+.btn:hover,
+.btn:active {
+    
+}
+
 /* This button is the "full" button, it will have a filled color */
 /* The one below will have be "empty" and is called a "Ghost" button */
 /* For the ghost button, */
 /* we will match the border color with the background of the 'full' button */
-.btn-full {
+
+/*.btn-full*/
+.btn-full:link,
+.btn-full:clicked {
     /* Went to flatuicolors.com to chose the carrot orange color */
     background-color: #e67e22; 
     /* We add this because without it, */
@@ -118,7 +139,9 @@ h1 {
     color: #fff;
 }
 
-.btn-ghost {
+/*.btn-ghost*/
+.btn-ghost:link,
+.btn-ghost:clicked {
     /* Here we are styling based on colors from the button above */
     border: 1px solid #e67e22;
     /* Change text color to match the orange */
