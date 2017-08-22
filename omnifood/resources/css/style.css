@@ -100,7 +100,7 @@ h1 {
 
 /*.btn */
 .btn:link,
-.btn:clicked {
+.btn:visited {
     /* This sets the .btn to inline-block */
     /* Note, there are tons of other options for display */
     display: inline-block;
@@ -114,13 +114,6 @@ h1 {
 }
 
 
-/* This was not here before, defining .btn-full and .btn-ghost */
-/* But this will also change the states when the mouse hovers over the button */
-/* And also when it is activated */
-.btn:hover,
-.btn:active {
-    
-}
 
 /* This button is the "full" button, it will have a filled color */
 /* The one below will have be "empty" and is called a "Ghost" button */
@@ -129,7 +122,8 @@ h1 {
 
 /*.btn-full*/
 .btn-full:link,
-.btn-full:clicked {
+.btn-full:visited {
+    /* Video - Building the header Part 2 */
     /* Went to flatuicolors.com to chose the carrot orange color */
     background-color: #e67e22; 
     /* We add this because without it, */
@@ -141,10 +135,21 @@ h1 {
 
 /*.btn-ghost*/
 .btn-ghost:link,
-.btn-ghost:clicked {
+.btn-ghost:visited {
     /* Here we are styling based on colors from the button above */
     border: 1px solid #e67e22;
     /* Change text color to match the orange */
     color: #e67e22;
 }
 
+/* Video - Building the header Part 2 */
+/* This was not here before, defining .btn-full and .btn-ghost */
+/* But this will also change the states when the mouse hovers over the button */
+/* And also when it is activated */
+/* Moved this below the .btn-full and .btn-ghost, so that it is activated after*/
+/* Went to 0to255.com to get darker shade of orange for the hover/active states */
+/* Went 2 shades darker from that site */
+.btn:hover,
+.btn:active {
+    background-color: #cf6d17;
+}
