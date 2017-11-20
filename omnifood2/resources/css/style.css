@@ -1,0 +1,125 @@
+/* ------------------------------------------- */
+/* BASIC SET UP */
+/* ------------------------------------------- */
+
+/*First thing always set the margin+padding to zero and box-sizing*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+/*    Set up some defaults, note these may be changed*/
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+/*    Setting the global font-size here, so that we can use relative percentages elsewhere*/
+    font-size: 20px;
+    font-weight: 300;
+/*    help readability*/
+    text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------- */
+
+.row {
+    /* Here we are setting the one and only time a maximum width in absolute units */
+    max-width: 1140px;
+    /* Now center to page, and as always, to center a container within another container, do: */
+    margin: 0 auto;
+}
+
+/* ---- HEADINGS ---- */
+h1 {
+/*    Despite '*' making margins be 0, normalize.css adds margins to h elements, so gotta clear*/
+    margin-top: 0;
+    margin-bottom: 20px;
+/*    Making white so it shows on the dark background*/
+    color: #fff;
+/*    Here use relative units because font-size is set in the html element, so to adjust, change in the html element.*/
+    font-size: 200%;
+/*    decrease this as size is larger*/
+    font-weight: 300;
+/*    Adjust wording:*/
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+
+
+/* ---- BUTTONS ---- */
+/*link is the normal resting state, visited is after clicked*/
+.btn:link,
+.btn:visited {
+/*    inline-block - like inline but has padding and margin, it doesn't force a line break, usually an <a> element is inline, and that's what we are using for out buttons, so now we switch*/
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+/*    This will ANIMATE the color transitions for the buttons when going from link/visited to hover/active*/
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+/* ------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------- */
+
+header {
+/*    Note the relative path for the background image, this style.css file is in the resources/css/ dir already, so img/hero.jpg is relative to that*/
+/*    Also using a linear gradient to shade - but note, we are setting both sides of the gradient to the same value to do this, there should be a better way*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+/*    We would not be able to see the image unless we set a height for the header div*/
+    height: 100vh;
+/*    Adjust the background image size to fit the header div*/
+    background-size: cover;
+/*    This will center the image, otherwise works from top-left*/
+    background-position: center;
+}
+
+.hero-text-box {
+/*    The goal here is to center the h1 text now within the viewport / hero image*/
+/*    Not using responsive fluid grid here, because at the time this was made, the only way to horizontally and vertically align something was like this (or at least he says), for first we position absolute*/
+    position: absolute;
+/*    Then assign a width the same as the .row size, so it works like a row*/
+    width: 1140px;
+/*    Then with absolute, you specify where to start - he's saying 50% from the top and left of the containing div*/
+    top: 50%;
+    left: 50%;
+/*    but as you will notice the h1's top left corner matches to this position, therefore, translate that back 50/50*/
+    transform: translate(-50%, -50%);
+}
+
