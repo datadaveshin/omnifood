@@ -1,3 +1,5 @@
+/* Orange color: #e67e22 */
+
 /* ------------------------------------------- */
 /* BASIC SET UP */
 /* ------------------------------------------- */
@@ -21,9 +23,11 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+
 /* ------------------------------------------- */
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------- */
+
 
 .row {
     /* Here we are setting the one and only time a maximum width in absolute units */
@@ -31,6 +35,7 @@ html {
     /* Now center to page, and as always, to center a container within another container, do: */
     margin: 0 auto;
 }
+
 
 /* ---- HEADINGS ---- */
 h1 {
@@ -94,6 +99,7 @@ h1 {
     color: #fff;
 }
 
+
 /* ------------------------------------------- */
 /* HEADER */
 /* ------------------------------------------- */
@@ -121,5 +127,49 @@ header {
     left: 50%;
 /*    but as you will notice the h1's top left corner matches to this position, therefore, translate that back 50/50*/
     transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+/*    floating the logo on the left hand side, but really it seems it just puts the ul on the right! - really what it does, instead of having the ul below the img, it makes them side by side*/
+    float: left;
+/*    To help center the logo within the nav bar with the ul*/
+    margin-top: 20px;
+}
+
+.main-nav {
+/*    This will actually put the ul on the right hand side of the page!!!!*/
+    float: right;
+/*    Get rid of bullet points*/
+    list-style: none;
+/*    Some margin for the ul now, this will help center with logo*/
+    margin-top: 55px;
+}
+
+/*Here we target just the li's of the main nav bar*/
+.main-nav li {
+/*    This removes the "returns" as the default for li's are to be block elements, inline-block allows the li's to be side by side*/
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/*Here we target just a's in the li's of the main nav bar, with pseudoclasses on top! */
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+/*    Here we are making a transparent border bottom which will turn orange later upon using hover and active below, along with a transition. And give some padding (space between content and border) */
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 8px 0;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+    padding: 8px 0;
 }
 
