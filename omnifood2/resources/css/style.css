@@ -28,7 +28,6 @@ html {
 /* REUSABLE COMPONENTS */
 /* ------------------------------------------- */
 
-
 .row {
     /* Here we are setting the one and only time a maximum width in absolute units */
     max-width: 1140px;
@@ -36,8 +35,27 @@ html {
     margin: 0 auto;
 }
 
+/*Here we are giving some whitespace around the different sections of the page - note, he uses padding, not margin here as he is going to use different background colors for the sections, and supposedly, this helps.*/
+section {
+    padding: 80px 0 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
 
 /* ---- HEADINGS ---- */
+/* NOTE - here originally just had h1 defined, see header commit. Later, we started putting common things for different parts of the header. I am keeping original notes though. */
+
+h1,
+h2,
+h3 {
+/*    decrease this as size is larger*/
+    font-weight: 300;
+/*    Adjust wording:*/
+    text-transform: uppercase;
+}
+
 h1 {
 /*    Despite '*' making margins be 0, normalize.css adds margins to h elements, so gotta clear*/
     margin-top: 0;
@@ -46,14 +64,64 @@ h1 {
     color: #fff;
 /*    Here use relative units because font-size is set in the html element, so to adjust, change in the html element.*/
     font-size: 200%;
-/*    decrease this as size is larger*/
-    font-weight: 300;
-/*    Adjust wording:*/
-    text-transform: uppercase;
-    letter-spacing: 1px;
     word-spacing: 4px;
+    letter-spacing: 1px;
 }
 
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+/*Creating a line after the h2 element in the second section using pure CSS*/
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+/*    Todo this, we need some content, so we add a whitespace*/
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* ---- PARAGRAPHS ---- */
+
+/* This is for text going across the page.*/
+/* He gives a great rule of thumb - 
+you only want "2 alphabets worth of text on a line"
+So like 102 characters */
+/* Note how he uses the width and margin-left:
+He sets the width to be 70%, so then he sets margin-left to be 15%, as.... 15% left + 70% width + 15% (not defined, but right) = 100%! */
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin: 0 15%;
+}
+
+/* We had defined .box above, but only want to change the text in the p's in the .box's so will do it this way: */
+.box p {
+    font-size: 90%
+    line-height: 145%;
+}
+
+/* ---- ICONS ---- */
+/* Note - these icons are actually fonts, so can use font rules */
+.icon-big {
+    font-size: 350%;
+    color: #e67e22;
+/*    Since these are fonts, they are inline, so need to set as block to use margin rules*/
+    display: block;
+    margin-bottom: 10px;
+}
 
 /* ---- BUTTONS ---- */
 /*link is the normal resting state, visited is after clicked*/
