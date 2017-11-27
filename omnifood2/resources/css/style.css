@@ -241,3 +241,34 @@ header {
     padding: 8px 0;
 }
 
+
+/* ------------------------------------------- */
+/* MEALS */
+/* ------------------------------------------- */
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+/*    This must be block for this*/
+    display: block;
+/*    Floating left will bring them side by side*/
+    float:left;
+/*    Have to set the width of these at 25% cause there are 4 of them.*/
+    width: 25%;
+}
+
+.meal-photo {
+/*    Here, this just means it has 100% width of it's parent*/
+    width: 100%;
+/*    Again, normalize gives margin to img's*/
+    margin: 0;
+}
+
+.meal-photo img {
+/*    Here we again set the width to equal that of the parent, and auto for the height*/
+    width: 100%;
+    height: auto;   
+}
