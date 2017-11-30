@@ -23,6 +23,17 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+/*Clearing right and left floats here so our layout works correctly. For example, the "HOW IT WORKS" section was missing it's 80px margin because of the previous floats. Have to go in to Lecture 47 for his discussion. But basically, you need to add the 'clearfix' class to the parent element of the floated children, in this case the ul element of the meals showcase.*/
+.clearfix {
+    zoom: 1
+}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 
 /* ------------------------------------------- */
 /* REUSABLE COMPONENTS */
@@ -121,6 +132,44 @@ He sets the width to be 70%, so then he sets margin-left to be 15%, as.... 15% l
 /*    Since these are fonts, they are inline, so need to set as block to use margin rules*/
     display: block;
     margin-bottom: 10px;
+}
+
+.icon-small {
+    font-size: 120%;
+    color: #e67e22;
+/*    Make inline-block so we can assign some width*/
+/*    Make inline-block so we can use text-align for centering*/
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+/*    Add some margin to right*/
+    margin-right: 10px;
+/*    Secrets to align text and icons, note the negative margin-top takes space away*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ---- LINKS ---- */
+a:link,
+a:visited {
+    color: #e67e22;
+/*    Get rid of underline*/
+    text-decoration: none;
+/*    Make a new custom underline*/
+    padding-bottom: 1px;
+    border-bottom: 2px solid #e67e22;
+/*    Animate to make it cooler when hovering and being active*/
+    transition: border-bottom 0.2s, color 0.2s;
+    
+}
+
+a:hover,
+a:active {
+/*    Want color to change and underline to disappear*/
+/*    Note that using "transparent" is a cleaner solution than changing the border-bottom to 0px*/
+    color: #555;
+    border-bottom: 2px solid transparent;
 }
 
 /* ---- BUTTONS ---- */
@@ -296,4 +345,83 @@ header {
 /*    Note how 1.03 is used, this gets rid of the weird white lines*/
     transform: scale(1.03);
     opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* HOW IT WORKS */
+/* ------------------------------------------- */
+.section-steps {
+    background-color: #f4f4f4;   
+}
+
+/*Using pseudo classes to work with the left and the right*/
+.steps-box:first-child {
+/*    Note, we are using text-align on an image, this is ok, as text-align works on inline-block elements, of which img is one.*/
+    text-align: right;
+/*    Using percentage here for fluid design, rather than use px*/
+    padding-right: 3%; 
+    margin-top: 30px;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+/*    here, define the width of the image directly, relative to continer*/
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+/*He's just showing here that you can add extra margin after the last of the 3 instructions step with this pseudoclass*/
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+/*    Building a CSS circle around the numbers*/
+    color: #e67e22;
+    border: 2px solid #e67e22;
+/*    Keep from forcing a line break, keep the number inside along with the text*/
+    display: inline-block;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+/*    Center the number in the circle*/
+    text-align: center;
+    padding: 5px;
+/*    Float the element so circle is next to text*/
+    float: left;
+/*    Adjust number*/
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+/*Hack to keep the app store and google store btns from being underlined, from the <a> tag stuff in the LINKS section above*/
+.btn-app:link,
+.btn-app:visited {
+/*    To do this, we can't use "transparent" so have to set border to zero*/
+    border: 0;
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* ------------------------------------------- */
+/* CITIES */
+/* ------------------------------------------- */
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+.city-features {
+    margin-bottom: 5px;
 }
