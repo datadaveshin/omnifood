@@ -231,6 +231,7 @@ header {
     background-size: cover;
 /*    This will center the image, otherwise works from top-left*/
     background-position: center;
+    background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -424,4 +425,51 @@ header {
 }
 .city-features {
     margin-bottom: 5px;
+}
+
+/* ------------------------------------------- */
+/* TESTIMONIALS */
+/* ------------------------------------------- */
+.section-testimonials {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+/*    COOL - this effect makes the background stay still when scrolling!*/
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 2%;
+/*    Can only used font-style italic if you have included it in your font list*/
+    font-style: italic;
+    line-height: 145%;
+/*    Need this to position the quote in the ::before below */
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote::before {
+/*    This is a glyph to make the quote sign*/
+    content: "\201C";
+    display: block;
+    font-size: 400%;
+/*    Help position it*/
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+/*    Make this it's own line*/
+    display: block;
+}
+
+cite img {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+/*    This will align the text with the image, you'd think it would go above in cite*/
+    vertical-align: middle;
 }
