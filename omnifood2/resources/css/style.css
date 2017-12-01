@@ -473,3 +473,68 @@ cite img {
 /*    This will align the text with the image, you'd think it would go above in cite*/
     vertical-align: middle;
 }
+
+/* ------------------------------------------- */
+/* SIGN UP */
+/* ------------------------------------------- */
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+/*The plan box was used to make individual boxes*/
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+/*    Again, using the math 5% + 90% + 5%*/
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef;
+}
+
+.plan-box div {
+    padding: 15px;
+/*    add a light line at the bottom of the box*/
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc;
+/*    We lost the border radius on .plan box when we added this :first-child definition, so readding*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+/*    get rid of the light line defined above for the very bottom div, this way, the light line is just a separator between subsections*/
+    border: 0;
+}
+
+.plan-price {
+    font-size: 300%;
+/*    Put font weight lower as size is large*/
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #e67e22;
+}
+
+.plan-price span {
+/*    Note - this percentage of font-size is derived from the parent above which is already 300%, therefore, to bring it back to 100%, we have to use 30%*/
+    font-size: 30%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+/*I think he had to add the ul to drill down to the li ??*/
+.plan-box ul li {
+   padding: 5px 0;
+   
+}
