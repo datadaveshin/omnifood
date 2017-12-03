@@ -312,5 +312,87 @@
                 </div>
             </div>
         </section>
+        
+        <section class="section-form">
+            <div class="row">
+                <h2>We're happy to hear from you</h2>
+            </div>
+            <div class="row">
+<!--                A form is a group of input elements, and <form></form> is the element that you put all of your input elements into.-->
+<!--                The form *requires a few attributes: method, action (here it is a location, but can be a script he says)-->
+                <form method="post" action="#" class="contact-form">
+<!--                    Here we will put "labels" in one column, then the "input" on the other-->
+                    <div class="row">
+                        <div class="col span-1-of-3">
+<!--                            "for" links to an #id in an <input>, <select>, it does NOT work for <textarea>, it then will highlight the input field when the label is clicked -->
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+<!--                            input needs attribute "type" which defines what type of input it is, a "name" which is used to send the form, "placeholder" puts some dummy text in the field before someone starts typing in it, "required" will prevent the form from being sent unless there is input in that field from the user-->
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Your email" required>
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">How did you find us?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+<!--                            This one is a pulldown menu, so you use <select></select>, and within that, each item you want to refer to uses <option>-->
+                            <select name="find-us" id="find-us">
+<!--                                Note, must specifiy each <option>, then within that, "value" is used by the script that handles the form when it is sent, "selected" will prefill the selecct with the chosen option -->
+                                <option value="friends" selected>Friends</option>
+                                <option value="search-engine">Search Engine</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="news">Newsletter</label>
+                        </div>
+                        <div class="col span-2-of-3">
+<!--                            This type is a checkbox, again, takes a "name" for the script run for the post, and "checked" will show that it has been checked already-->
+                            <input type="checkbox" name="news" id="news" checked>Yes please!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Drop us a line</label>
+                        </div>
+                        <div class="col span-2-of-3">
+<!--                            Using the larger "textarea" element now, which is similar to <input> element with type="text", it also needs a "name" and takes a "placeholder" -->
+                            <textarea name="message" placeholder="Your message"></textarea>
+                        </div>
+                    </div>                    
+                    <div class="row">
+<!--                        Making the submit button - first, we don't want a lable, but for consistency will use &nbsp;-->
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+<!--                            Here, the "value" appears inside the button-->
+                            <input type="submit" value="Send it">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
     </body>
 </html>
+
+
+Fields to include:
+Name
+Email
+How did you find us?
+Newsletter
+Drop us a line
