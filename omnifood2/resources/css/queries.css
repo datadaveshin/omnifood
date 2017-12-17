@@ -1,0 +1,26 @@
+
+/* Smaller webpages to larger tablets */
+/* These are widths smaller than our 1140px row */
+@media only screen and (max-width: 1023px) {
+
+}
+
+
+/* Tablets in portrait position*/
+/* From 768 to 1023px */
+/* Width of older ipads in landscape are 1024px, therefore want 1 px lower for larger phones*/
+@media only screen and (max-width: 1034 px) {
+
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+/* Width of ipad at the time was 768px, so targeting phones smaller than the ipad*/
+@media only screen and (max-width: 767px) {
+
+}
+
+/* Small phones from 0 to 480px */
+/* At the time of the video, this was for the old iphone4 and 5*/
+@media only screen and (max-width: 480px) {
+
+}
