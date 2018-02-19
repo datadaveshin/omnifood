@@ -11,7 +11,8 @@
     box-sizing: border-box;
 }
 
-html {
+html
+body {
 /*    Set up some defaults, note these may be changed*/
     background-color: #fff;
     color: #555;
@@ -21,6 +22,8 @@ html {
     font-weight: 300;
 /*    help readability*/
     text-rendering: optimizeLegibility;
+    /*Use this so that words that go past the screen don't increase the page width*/
+    overflow-x: hidden;
 }
 
 /*Clearing right and left floats here so our layout works correctly. For example, the "HOW IT WORKS" section was missing it's 80px margin because of the previous floats. Have to go in to Lecture 47 for his discussion. But basically, you need to add the 'clearfix' class to the parent element of the floated children, in this case the ul element of the meals showcase.*/
@@ -107,7 +110,7 @@ h2:after {
 /* ---- PARAGRAPHS ---- */
 
 /* This is for text going across the page.*/
-/* He gives a great rule of thumb - 
+/* He gives a great rule of thumb -
 you only want "2 alphabets worth of text on a line"
 So like 102 characters */
 /* Note how he uses the width and margin-left:
@@ -161,7 +164,7 @@ a:visited {
     border-bottom: 2px solid #e67e22;
 /*    Animate to make it cooler when hovering and being active*/
     transition: border-bottom 0.2s, color 0.2s;
-    
+
 }
 
 a:hover,
@@ -357,21 +360,24 @@ header {
 /* HOW IT WORKS */
 /* ------------------------------------------- */
 .section-steps {
-    background-color: #f4f4f4;   
+    background-color: #f4f4f4;
 }
 
+.steps-box {
+  margin-top: 30px;
+}
 /*Using pseudo classes to work with the left and the right*/
 .steps-box:first-child {
 /*    Note, we are using text-align on an image, this is ok, as text-align works on inline-block elements, of which img is one.*/
     text-align: right;
 /*    Using percentage here for fluid design, rather than use px*/
-    padding-right: 3%; 
-    margin-top: 30px;
+    padding-right: 3%;
 }
 
 .steps-box:last-child {
-    padding-left: 3%;
-    margin-top: 70px;
+  text-align: left;
+  padding-left: 3%;
+  margin-top: 70px;
 }
 
 .app-screen {
@@ -540,7 +546,7 @@ cite img {
 
 /*I think he had to add the ul to drill down to the li ??*/
 .plan-box ul li {
-   padding: 5px 0;  
+   padding: 5px 0;
 }
 
 /* ------------------------------------------- */
@@ -600,13 +606,13 @@ footer {
     float: right;
 }
 
-.footer-nav li, 
+.footer-nav li,
 .social-links li {
     display: inline-block;
     margin-right: 20px;
 }
 
-.footer-nav li:last-child, 
+.footer-nav li:last-child,
 .social-links li:last-child {
     margin-right: 0;
 }
